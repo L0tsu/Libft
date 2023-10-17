@@ -2,7 +2,7 @@
 #include <libc.h>
 #include <ctype.h>
 #include <strings.h>
-#include "libft.h"
+#include "src/libft.h"
 #include "colours.h"
 
 void 	_isascii()
@@ -12,30 +12,30 @@ void 	_isascii()
 	while (is_ascii < 127)
 	{
 		if (isascii(is_ascii) != ft_isascii(is_ascii))
-			{printf (""WHITE"is_ascii%d - "RED""BOLD"ft error char *{%d}\n", is_ascii, is_ascii);break;}
+			{printf (""WHITE"is_ascii%d - "RED""BOLD"ft error char *{%d}"DEFAULT"\n", is_ascii, is_ascii);break;}
 			is_ascii++;
 	}
 	if (is_ascii == 127)
-		printf (""WHITE"decimal - "GREEN""BOLD"OK\n");
+		printf (""WHITE"decimal - "GREEN""BOLD"OK"DEFAULT"\n");
 	is_ascii = 0000;
 	while (is_ascii < 0177)
 	{
 		if (isascii(is_ascii) != ft_isascii(is_ascii))
-			{printf (""WHITE"octal%d - "RED""BOLD"ft error char *{%d}\n", is_ascii, is_ascii);break;}
+			{printf (""WHITE"octal%d - "RED""BOLD"ft error char *{%d}"DEFAULT"\n", is_ascii, is_ascii);break;}
 
 			is_ascii++;
 	}
 	if (is_ascii == 0177)
-		printf (""WHITE"octal - "GREEN""BOLD"OK\n");
+		printf (""WHITE"octal - "GREEN""BOLD"OK"DEFAULT"\n");
 	is_ascii = 0x00;
 	while (is_ascii < 0x7f)
 	{
 		if (isascii(is_ascii) != ft_isascii(is_ascii))
-			{printf (""WHITE"hex%d - "RED""BOLD"ft error char *{%d}\n", is_ascii, is_ascii);break;}
+			{printf (""WHITE"hex%d - "RED""BOLD"ft error char *{%d}"DEFAULT"\n", is_ascii, is_ascii);break;}
 			is_ascii++;
 	}
 	if (is_ascii == 0x7f)
-		printf (""WHITE"hex - "GREEN""BOLD"OK\n");
+		printf (""WHITE"hex - "GREEN""BOLD"OK"DEFAULT"\n");
 	printf("\033[0;34m------------------\n");
 }
 void	_isalnum()
@@ -49,7 +49,7 @@ void	_isalnum()
 		i++;
 	}
 	if (!is_alnum[i])
-		printf (""WHITE"is_alnum - "GREEN""BOLD"OK\n");
+		printf (""WHITE"isalnum - "GREEN""BOLD"OK"DEFAULT"\n");
 }
 void	_isdigit()
 {
@@ -62,7 +62,7 @@ void	_isdigit()
 		i++;
 	}
 	if (!is_digit[i])
-		printf (""WHITE"is_digit - "GREEN""BOLD"OK\n");
+		printf (""WHITE"isdigit - "GREEN""BOLD"OK"DEFAULT"\n");
 }
 void	_isalpha()
 {
@@ -75,13 +75,13 @@ void	_isalpha()
 		i++;
 	}
 	if (!is_alpha[i])
-		printf (""WHITE"is_alpha - "GREEN""BOLD"OK\n");
+		printf (""WHITE"isalpha - "GREEN""BOLD"OK"DEFAULT"\n");
 }
 void	_strlen()
 {
 	char s[] = " gsdf;;;sd';\n\t\v\fasda aa daw acxcx278";
 	if (strlen(s) == ft_strlen(s))
-		printf (""WHITE"strlen - "GREEN""BOLD"OK\n");
+		printf (""WHITE"strlen - "GREEN""BOLD"OK"DEFAULT"\n");
 	else
 		printf (""WHITE"strlen - "RED""BOLD"ft error\n");
 }
@@ -96,7 +96,7 @@ void	_isprint()
 		i++;
 	}
 	if (!s[i])
-		printf (""WHITE"is_print - "GREEN""BOLD"OK\n");
+		printf (""WHITE"isprint - "GREEN""BOLD"OK"DEFAULT"\n");
 }
 void	_memset()
 {
@@ -107,7 +107,7 @@ void	_memset()
 	if (strncmp(str, str1, 13))
 		printf (""WHITE"memset - "RED""BOLD"ft error\n"GREEN""BOLD"%d\n", strcmp(str, str1));
 	else
-		printf (""WHITE"memset - "GREEN""BOLD"OK\n");
+		printf (""WHITE"memset - "GREEN""BOLD"OK"DEFAULT"\n");
 
 }
 void	_bzero()
@@ -117,13 +117,24 @@ void	_bzero()
 	bzero(s, 1);
 	ft_bzero(s1, 1);
 	if (!strcmp(s, s1))
-		printf (""WHITE"bzero - "GREEN""BOLD"OK\n");
+		printf (""WHITE"bzero - "GREEN""BOLD"OK"DEFAULT"\n");
 	else{
 		printf (""WHITE"bzero - "RED""BOLD"ft error\n%s - %s\n", s, s1);
 		printf ("%d\n", strcmp(s, s1));
 	}
 }
+void	_memcpy()
+{
+	char	dst[50] = "..............";
+	char	dst1[50] = "..............";
 
+	memcpy(dst, "bonjour", 5);
+	ft_memcpy(dst1, "bonjour", 5);
+	if (!strcmp(dst, dst1))
+		printf(""WHITE"memcpy - "GREEN""BOLD"OK"DEFAULT"\n");
+	else
+		printf(""WHITE"memcpy - "RED""BOLD"ft error\n%s - %s\n"DEFAULT"", dst, dst1 );
+}
 int	main ()
 {
 	system("clear");
@@ -143,4 +154,6 @@ int	main ()
 	_memset();
 	/* bzero */
 	_bzero();
+	/* memcpy */
+	_memcpy();
 }
