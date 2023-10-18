@@ -9,7 +9,7 @@ void	printok(char *str)
 {
 	printf(""WHITE"%s - "GREEN""BOLD"OK"DEFAULT"\n", str);
 }
-void	printko(char *str)
+void	printKO(char *str)
 {
 	printf(""WHITE"%s - "RED""BOLD"ft error"DEFAULT"\n", str);
 }
@@ -196,7 +196,7 @@ void	_strchr()
 	if (strchr("bonjour", 1) == ft_strchr("bonjour", 1))
 		printok("strchr");
 	else {
-		printko("strchr");
+		printKO("strchr");
 		printf("%s - %s\n",strchr(str, 'f'), ft_strchr(str, 'f'));}
 }
 
