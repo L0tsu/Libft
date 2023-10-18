@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:53:51 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/18 13:56:39 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/18 14:20:41 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ void			*ft_memcpy(void *dst, const void *src, t_size n);
 void			*ft_memmove(void *dst, const void *src, t_size len);
 t_size			ft_strlcpy(char *dst, const char *src, t_size dstlen);
 t_size			ft_strlcat(char *dst, const char *src, t_size dstlen);
+int				ft_toupper(int c);
+int				ft_tolower(int c);
 
 #endif

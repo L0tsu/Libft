@@ -167,32 +167,36 @@ void	_strlcat()
 	else
 		printf(""WHITE"strlcat - "RED""BOLD"ft error\n%s - %s\n%d-%d\n"DEFAULT"", dst, dst1, i, j);
 }
+void	m_toupper()
+{
+	if (toupper('b') == ft_toupper('b'))
+		printf(""WHITE"toupper - "GREEN""BOLD"OK"DEFAULT"\n");
+	else
+		printf (""WHITE"toupper - "RED""BOLD"ft error"DEFAULT"\n");
+}
+void	m_tolower()
+{
+	if (tolower('B') == ft_tolower('B'))
+		printf(""WHITE"tolower - "GREEN""BOLD"OK"DEFAULT"\n");
+	else
+		printf (""WHITE"tolower - "RED""BOLD"ft error"DEFAULT"\n");
+}
 
 int	main ()
 {
 	system("clear");
-	/* isalpha */
-	_isalpha();
-	/* isdigit */
-	_isdigit();
-	/* isalnum */
-	_isalnum();
-	/* isascii */
-	_isascii();
-	/* strlen */
-	_strlen();
-	/* isprint */
-	_isprint();
-	/* memset */
-	_memset();
-	/* bzero */
-	_bzero();
-	/* memcpy */
-	_memcpy();
-	/* memmove */
-	_memmove();
-	/* strlcpy */
-	_strlcpy();
-	/* strlcat */
-	_strlcat();
+	/* isalpha */_isalpha();
+	/* isdigit */_isdigit();
+	/* isalnum */_isalnum();
+	/* isascii */_isascii();
+	/* strlen */_strlen();
+	/* isprint */_isprint();
+	/* memset */_memset();
+	/* bzero */_bzero();
+	/* memcpy */_memcpy();
+	/* memmove */_memmove();
+	/* strlcpy */_strlcpy();
+	/* strlcat */_strlcat();
+	/* toupper */m_toupper();
+	/* tolower */m_tolower();
 }
