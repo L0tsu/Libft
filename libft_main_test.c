@@ -197,7 +197,7 @@ void	_strchr()
 		printok("strchr");
 	else {
 		printKO("strchr");
-		printf("%s - %s\n",strchr(str, 'f'), ft_strchr(str, 'f'));}
+		printf("%s - %s\n",strchr(str, 'b'), ft_strchr(str, 'b'));}
 }
 
 
