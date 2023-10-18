@@ -146,11 +146,11 @@ void	_memcpy()
 }
 void	_memmove()
 {
-	char	dst[] = "..............";
-	char	dst1[] = "..............";
+	char	dst[20] = "hello";
+	char	dst1[20] = "hello";
 
-	memmove(dst, "d",15);
-	ft_memmove(dst1, "d", 15);
+	memmove(dst+3, dst, 17);
+	ft_memmove(dst1+3, dst1, 20);
 	if (!strcmp(dst, dst1))
 		printf(""WHITE"memmove - "GREEN""BOLD"OK"DEFAULT"\n");
 	else
@@ -199,7 +199,33 @@ void	_strchr()
 		printKO("strchr");
 		printf("%s - %s\n",strchr(str, 'b'), ft_strchr(str, 'b'));}
 }
-
+void	_strrchr()
+{
+	char str[] = "bonjour";
+	if (strrchr("bonjour", 1) == ft_strrchr("bonjour", 1))
+		printok("strrchr");
+	else {
+		printKO("strrchr");
+		printf("%s - %s\n",strrchr(str, 1), ft_strrchr(str, 1));}
+}
+void	_strncmp()
+{
+	int i = 0;
+	char s1[] = "bonjour";
+	char s2[] = "bonjouR";
+	if (strncmp(s1, s2, i) == ft_strncmp(s1, s2, i))
+		printok("strncmp");
+	else
+		{printKO("strncmp");printf("%d - %d", strncmp(s1, s2, i), ft_strncmp(s1, s2, i));}
+}
+void	_memchr()
+{
+	char s[]="akjsdhgfkjaghsdfljahgsdkjfahgskdjfhagksdgaxfkjsdhfkajghsgdssgjdg";
+	if (memchr(s, 'k', 1) == ft_memchr(s, 'k', 1))
+		printok("memchr");
+	else
+		{printKO("memchr");printf("%s - %s\n",memchr(s, 'k', 1), ft_memchr(s, 'k', 1)); }
+}
 
 int	main ()
 {
@@ -213,10 +239,13 @@ int	main ()
 	/* bzero */_bzero();
 	/* memset */_memset();
 	/* memcpy */_memcpy();
-	/* memmove */_memmove();
+	/*  memmove*  Overlap doesnt work *//* printf(""RED"MEMMOVE BUGGY"WHITE"\n"); */_memmove();
 	/* strlcpy */_strlcpy();
 	/* strlcat */_strlcat();
 	/* toupper */m_toupper();
 	/* tolower */m_tolower();
 	/* strchr */_strchr();
+	/* strrchr */_strrchr();
+	/* strncmp */_strncmp();
+	/* memchr */_memchr();
 }
