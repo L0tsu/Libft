@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:53:51 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/18 14:20:41 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:34:54 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ t_size			ft_strlcpy(char *dst, const char *src, t_size dstlen);
 t_size			ft_strlcat(char *dst, const char *src, t_size dstlen);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+char			*ft_strchr(const char *str, int c);
+char			*ft_strrchr(const char *str, int c);
 
 #endif

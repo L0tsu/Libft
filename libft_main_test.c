@@ -5,6 +5,15 @@
 #include "src/libft.h"
 #include "colours.h"
 
+void	printok(char *str)
+{
+	printf(""WHITE"%s - "GREEN""BOLD"OK"DEFAULT"\n", str);
+}
+void	printko(char *str)
+{
+	printf(""WHITE"%s - "RED""BOLD"ft error"DEFAULT"\n", str);
+}
+
 void 	_isascii()
 {
 	unsigned char is_ascii = 0;
@@ -181,6 +190,16 @@ void	m_tolower()
 	else
 		printf (""WHITE"tolower - "RED""BOLD"ft error"DEFAULT"\n");
 }
+void	_strchr()
+{
+	char str[] = "bonjour";
+	if (strchr("bonjour", 1) == ft_strchr("bonjour", 1))
+		printok("strchr");
+	else {
+		printko("strchr");
+		printf("%s - %s\n",strchr(str, 'f'), ft_strchr(str, 'f'));}
+}
+
 
 int	main ()
 {
@@ -191,12 +210,13 @@ int	main ()
 	/* isascii */_isascii();
 	/* strlen */_strlen();
 	/* isprint */_isprint();
-	/* memset */_memset();
 	/* bzero */_bzero();
+	/* memset */_memset();
 	/* memcpy */_memcpy();
 	/* memmove */_memmove();
 	/* strlcpy */_strlcpy();
 	/* strlcat */_strlcat();
 	/* toupper */m_toupper();
 	/* tolower */m_tolower();
+	/* strchr */_strchr();
 }
