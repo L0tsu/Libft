@@ -239,7 +239,7 @@ int	main ()
 	/* bzero */_bzero();
 	/* memset */_memset();
 	/* memcpy */_memcpy();
-	/*  memmove*  Overlap doesnt work *//* printf(""RED"MEMMOVE BUGGY"WHITE"\n"); */_memmove();
+	/*  memmove*  Overlap not fixed*//* printf(""RED"MEMMOVE BUGGY"WHITE"\n"); */_memmove();
 	/* strlcpy */_strlcpy();
 	/* strlcat */_strlcat();
 	/* toupper */m_toupper();
