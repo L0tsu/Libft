@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lotus <lotus@student.42.fr>                +#+  +:+       +#+        */
+/*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:17:20 by lotus             #+#    #+#             */
-/*   Updated: 2023/10/17 16:26:33 by lotus            ###   ########.fr       */
+/*   Updated: 2023/10/18 13:55:33 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, t_size n)
+void	*ft_memcpy(void *dst, const void *src, t_size n)
 {
-	const char 	*s;
-	char 		*d;
+	const char	*s;
+	char		*d;
 
 	s = src;
 	d = dst;

@@ -8,7 +8,7 @@
 void 	_isascii()
 {
 	unsigned char is_ascii = 0;
-	printf("\033[0;34m---- is_ascii ----\n");
+	printf(""BLUE"---- is_ascii ----"DEFAULT"\n");
 	while (is_ascii < 127)
 	{
 		if (isascii(is_ascii) != ft_isascii(is_ascii))
@@ -135,6 +135,39 @@ void	_memcpy()
 	else
 		printf(""WHITE"memcpy - "RED""BOLD"ft error\n%s - %s\n"DEFAULT"", dst, dst1 );
 }
+void	_memmove()
+{
+	char	dst[] = "..............";
+	char	dst1[] = "..............";
+
+	memmove(dst, "d",15);
+	ft_memmove(dst1, "d", 15);
+	if (!strcmp(dst, dst1))
+		printf(""WHITE"memmove - "GREEN""BOLD"OK"DEFAULT"\n");
+	else
+		printf(""WHITE"memmove - "RED""BOLD"ft error\n%s - %s\n"DEFAULT"", dst, dst1 );
+}
+void	_strlcpy()
+{
+	char dst[50]="df";
+	char dst1[50]="df";
+	if (strlcpy(dst, "", 3) == ft_strlcpy(dst1, "", 3) && !strcmp(dst, dst1))
+		printf(""WHITE"strlcpy - "GREEN""BOLD"OK"DEFAULT"\n");
+	else
+		printf(""WHITE"strlcpy - "RED""BOLD"ft error\n%s - %s\n"DEFAULT"", dst, dst1 );
+}
+void	_strlcat()
+{
+	char dst[100] ="dfs";
+	char dst1[100] ="dfs";
+	int	i = strlcat(dst, "sdfsdsdffs", 20);
+	int	j = ft_strlcat(dst1, "sdfsdsdffs", 20);
+	if (!strcmp(dst, dst1) && i == j)
+		printf(""WHITE"strlcat - "GREEN""BOLD"OK"DEFAULT"\n");
+	else
+		printf(""WHITE"strlcat - "RED""BOLD"ft error\n%s - %s\n%d-%d\n"DEFAULT"", dst, dst1, i, j);
+}
+
 int	main ()
 {
 	system("clear");
@@ -156,4 +189,10 @@ int	main ()
 	_bzero();
 	/* memcpy */
 	_memcpy();
+	/* memmove */
+	_memmove();
+	/* strlcpy */
+	_strlcpy();
+	/* strlcat */
+	_strlcat();
 }
