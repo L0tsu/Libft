@@ -9,4 +9,9 @@ NAME = libft
 git :
 	@git add *.c *.h src makefile
 	@git commit -m "latest"
-	@echo "\n_____\033[1;36mGit commit successful\033[0;37m_____"
+	@echo\
+"\n----------------------------------------\n\
+|                                      |\n\
+|               \033[1;34mCOMMIT SUCCESSFUL      |\n\
+|                                      |\n\
+----------------------------------------\n"
