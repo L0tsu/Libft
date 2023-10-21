@@ -226,6 +226,26 @@ void	_memchr()
 	else
 		{printKO("memchr");printf("%s - %s\n",memchr(s, 'k', 1), ft_memchr(s, 'k', 1)); }
 }
+void	_memcmp()
+{
+	char str[] = "asdfasdfasdf";
+	char str1[] = "asdfasdfasdfz";
+	int i = 0;
+	if (memcmp(str, str1, i) == ft_memcmp(str, str1, i))
+		printok("memcmp");
+	else{
+		printKO("memcmp");printf("%d - %d\n", memcmp(str, str1, i),ft_memcmp(str, str1, i));}
+}
+void	_strnstr()
+{
+	char haystack[] = "Lorem ipsum dolo\nr sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+	char needle[] = "";
+	int i = 10;
+	if (strnstr(haystack, needle, i) == ft_strnstr(haystack, needle,i))
+		printok("strnstr");
+	else
+	printf (""GREEN"%s\n"RED"%s\n", strnstr(haystack, needle, i), ft_strnstr(haystack, needle, i));
+}
 
 int	main ()
 {
@@ -239,7 +259,7 @@ int	main ()
 	/* bzero */_bzero();
 	/* memset */_memset();
 	/* memcpy */_memcpy();
-	/*  memmove*  Overlap not fixed*//* printf(""RED"MEMMOVE BUGGY"WHITE"\n"); */_memmove();
+	/* memmove*/_memmove();
 	/* strlcpy */_strlcpy();
 	/* strlcat */_strlcat();
 	/* toupper */m_toupper();
@@ -248,4 +268,6 @@ int	main ()
 	/* strrchr */_strrchr();
 	/* strncmp */_strncmp();
 	/* memchr */_memchr();
+	/* memcmp */_memcmp();
+	/* strnstr */_strnstr();
 }

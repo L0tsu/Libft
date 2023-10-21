@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 12:40:24 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/21 10:40:02 by julmorea         ###   ########.fr       */
+/*   Created: 2023/10/21 10:42:09 by julmorea          #+#    #+#             */
+/*   Updated: 2023/10/21 11:00:51 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, t_size len)
+int	ft_memcmp(const void *s1, const void *s2, t_size n)
 {
-	char		*d;
-	const char	*s;
-	t_size		i;
+	const char *p1;
+	const char *p2;
 
-	d = dst;
-	s = src;
-	i = 0;
-	if (d > s && d < s + len)
+	p1 = s1;
+	p2 = s2;
+	while (*p1 == *p2 && (*p1 || *p2) && n > 1)
 	{
-		i = len;
-		while (i > 0)
-		{
-			d[i - 1] = s[i - 1];
-			i--;
-		}
+		p1++;
+		p2++;
+		n--;
 	}
-	else
-	{
-		while (i < len)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	return (dst);
+	return (*p1 - *p2);
 }
