@@ -6,13 +6,13 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:39:06 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/18 13:52:47 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/21 13:28:45 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, t_size n)
+void	ft_bzero(void *s, size_t n)
 {
 	int	*p;
 

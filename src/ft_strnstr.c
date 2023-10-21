@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 11:05:42 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/21 12:46:21 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/21 13:27:52 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	needlefinder(const char *haystack, const char *needle)
 	return (1);
 }
 
-char	*ft_strnstr(const char *haystack, const char *needle, t_size len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	t_size	i;
+	size_t	i;
 
 	i = 0;
 	if (!*needle)
