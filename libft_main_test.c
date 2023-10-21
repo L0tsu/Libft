@@ -202,11 +202,11 @@ void	_strchr()
 void	_strrchr()
 {
 	char str[] = "bonjour";
-	if (strrchr("bonjour", 1) == ft_strrchr("bonjour", 1))
+	if (strrchr(str, 'n') == ft_strrchr(str, 'n'))
 		printok("strrchr");
 	else {
 		printKO("strrchr");
-		printf("%s - %s\n",strrchr(str, 1), ft_strrchr(str, 1));}
+		printf("%s - %s\n",strrchr(str, 'n'), ft_strrchr(str, 'n'));}
 }
 void	_strncmp()
 {
@@ -320,7 +320,7 @@ int	main ()
 	// _strdup();
 	// ------------------------------------
 	// OTHER FUNCTIONS
-	_substr();
+	// _substr();
 	// _strjoin();
 	// _strtrim();
 	// _split();
