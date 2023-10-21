@@ -298,6 +298,15 @@ void	_substr()
 	char *ptr = ft_substr(str, c, i);
 	printf("%s\n"BLUE"strlen = %d/%d\n", ptr, ft_strlen(ptr), i - 1);
 }
+void	_strjoin()
+{
+	char str[] = "Lorem ipsum dolor sit amet,";
+	char join[] = " consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+	char *conc = ft_strjoin(str, join);
+	printf("%s\n", conc);
+}
+
 
 int	main ()
 {
@@ -329,7 +338,7 @@ int	main ()
 	// ------------------------------------
 	// OTHER FUNCTIONS
 	// _substr();
-	// _strjoin();
+	_strjoin();
 	// _strtrim();
 	// _split();
 	// _itoa();
