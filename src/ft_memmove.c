@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 12:40:24 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/21 13:28:28 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/21 17:08:25 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	d = dst;
 	s = src;
 	i = 0;
+	if (!dst)
+		return (0);
 	if (d > s && d < s + len)
 	{
 		i = len;
@@ -31,12 +33,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	else
-	{
-		while (i < len)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
+		ft_memcpy(dst, src, len);
 	return (dst);
 }

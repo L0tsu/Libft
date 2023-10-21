@@ -150,10 +150,10 @@ void	_memmove()
 	char	dst1[20] = "hello";
 
 	memmove(dst+3, dst, 17);
-	ft_memmove(dst1+3, dst1, 20);
-	if (!strcmp(dst, dst1))
-		printf(""WHITE"memmove - "GREEN""BOLD"OK"DEFAULT"\n");
-	else
+	ft_memmove(dst1+3, dst1, 17);
+	// if (!strcmp(dst, dst1))
+	// 	printf(""WHITE"memmove - "GREEN""BOLD"OK"DEFAULT"\n");
+	// else
 		printf(""WHITE"memmove - "RED""BOLD"ft error\n%s - %s\n"DEFAULT"", dst, dst1 );
 }
 void	_strlcpy()
@@ -321,7 +321,7 @@ int	main ()
 	// _bzero();
 	// _memset();
 	// _memcpy();
-	// _memmove();
+	_memmove();
 	// _strlcpy();
 	// _strlcat();
 	// m_toupper();
@@ -338,7 +338,7 @@ int	main ()
 	// ------------------------------------
 	// OTHER FUNCTIONS
 	// _substr();
-	_strjoin();
+	// _strjoin();
 	// _strtrim();
 	// _split();
 	// _itoa();
