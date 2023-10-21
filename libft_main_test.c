@@ -246,28 +246,89 @@ void	_strnstr()
 	else
 	printf (""GREEN"%s\n"RED"%s\n", strnstr(haystack, needle, i), ft_strnstr(haystack, needle, i));
 }
+void	_atoi()
+{
+	char str0[] = "";
+	char str1[] = "      \t\v\f\n";
+	char str2[] = "      \t\v\f\n000";
+	char str3[] = "....";
+	char str4[] = "2147483647";
+	char str5[] = "-2147483648";
+	int i = 0;
+	if (!(atoi(str0) == ft_atoi(str0)))
+		{i++;printf("%d - %d\n", i, ft_atoi(str0));}
+	else if (!(atoi(str1) == ft_atoi(str1)))
+		{i++;printf("%d - %d\n", i, ft_atoi(str1));}
+	else if (!(atoi(str2) == ft_atoi(str2)))
+		{i++;printf("%d - %d\n", i, ft_atoi(str2));}
+	else if (!(atoi(str3) == ft_atoi(str3)))
+		{i++;printf("%d - %d\n", i, ft_atoi(str3));}
+	else if (!(atoi(str4) == ft_atoi(str4)))
+		{i++;printf("%d - %d\n", i, ft_atoi(str4));}
+	else if (!(atoi(str5) == ft_atoi(str5)))
+		{i++;printf("%d - %d\n", i, ft_atoi(str5));}
+	if (!i)
+		printok("atoi");
+	else printKO("atoi");
+}
+void	_calloc()
+{
+	int len = 10;
+	void *p1 = calloc(len, sizeof(char));
+	void *p2 = ft_calloc(len, sizeof(char));
+	if (p1 && p2)
+		printok("calloc");
+	else
+		printKO("calloc");
+}
+void	_strdup()
+{
+	char *str = strdup("skjahdgf");
+	char *str1 = ft_strdup("skjahdgf");
+	if (!strcmp(str, str1))
+		printok("strdup");
+	else
+		{printKO("strdup");printf("%s\n%s\n", str,str1);}
+}
 
 int	main ()
 {
 	system("clear");
-	/* isalpha */_isalpha();
-	/* isdigit */_isdigit();
-	/* isalnum */_isalnum();
-	/* isascii */_isascii();
-	/* strlen */_strlen();
-	/* isprint */_isprint();
-	/* bzero */_bzero();
-	/* memset */_memset();
-	/* memcpy */_memcpy();
-	/* memmove*/_memmove();
-	/* strlcpy */_strlcpy();
-	/* strlcat */_strlcat();
-	/* toupper */m_toupper();
-	/* tolower */m_tolower();
-	/* strchr */_strchr();
-	/* strrchr */_strrchr();
-	/* strncmp */_strncmp();
-	/* memchr */_memchr();
-	/* memcmp */_memcmp();
-	/* strnstr */_strnstr();
+	// LIB C -----------------------------
+	// _isalpha();
+	// _isdigit();
+	// _isalnum();
+	// _isascii();
+	// _strlen();
+	// _isprint();
+	// _bzero();
+	// _memset();
+	// _memcpy();
+	// _memmove();
+	// _strlcpy();
+	// _strlcat();
+	// m_toupper();
+	// m_tolower();
+	// _strchr();
+	// _strrchr();
+	// _strncmp();
+	// _memchr();
+	// _memcmp();
+	// _strnstr();
+	// _atoi();
+	// _calloc();
+	// _strdup();
+	// ------------------------------------
+	// OTHER FUNCTIONS
+	_substr();
+	// _strjoin();
+	// _strtrim();
+	// _split();
+	// _itoa();
+	// _strmapi();
+	// _striteri();
+	// _putchar_fd();
+	// _putstr_fd();
+	// _putendl_fd();
+	// _putnbr_fd();
 }

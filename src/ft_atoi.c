@@ -1,23 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 15:56:01 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/21 12:46:15 by julmorea         ###   ########.fr       */
+/*   Created: 2023/10/21 11:30:49 by julmorea          #+#    #+#             */
+/*   Updated: 2023/10/21 12:42:08 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-int	ft_strncmp(const char *s1, const char *s2, t_size n)
+int	ft_isspace(const char *str)
 {
 	int	i;
 
 	i = 0;
-	while (s1[i] == s2[i] && i < n && s1[i] && s2[i])
+	while (str[i] >= 9 && str[i] <= 13 || str[i] == 32)
 		i++;
-	return (s1[i] - s2[i]);
+	return (i);
+}
+
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	negative;
+	int	p;
+
+	i = 0;
+	negative = 1;
+	p = ft_isspace(str);
+	if (str[p] == '-')
+	{
+		negative = -negative;
+		p++;
+	}
+	while (str[p] >= '0' && str[p] <= '9')
+	{
+		i += (str[p] - 48);
+		p++;
+		if (str[p] >= '0' && str[p] <= '9')
+			i *= 10;
+	}
+	return (i * negative);
 }

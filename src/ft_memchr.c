@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:43:53 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/18 16:54:22 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/21 12:43:20 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 const char	*ft_memchr(const void *s, int c, t_size n)
 {
-	const char *p;
-	int	i;
+	const char	*p;
+	int			i;
 
 	p = s;
 	i = 0;
