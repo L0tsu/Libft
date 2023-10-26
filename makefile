@@ -25,7 +25,7 @@ clean:
 			rm -f $(OBJS) a.out
 			
 fclean:		clean
-			rm -f $(NAME)
+			rm -f $(NAME) libft.h.gch
 
 re:			fclean $(NAME)
 
