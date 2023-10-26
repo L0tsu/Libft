@@ -151,9 +151,9 @@ void	_memmove()
 
 	memmove(dst+3, dst, 17);
 	ft_memmove(dst1+3, dst1, 17);
-	// if (!strcmp(dst, dst1))
-	// 	printf(""WHITE"memmove - "GREEN""BOLD"OK"DEFAULT"\n");
-	// else
+	if (!strcmp(dst, dst1))
+		printf(""WHITE"memmove - "GREEN""BOLD"OK"DEFAULT"\n");
+	else
 		printf(""WHITE"memmove - "RED""BOLD"ft error\n%s - %s\n"DEFAULT"", dst, dst1 );
 }
 void	_strlcpy()
@@ -304,9 +304,17 @@ void	_strjoin()
 	char join[] = " consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
 	char *conc = ft_strjoin(str, join);
-	printf("%s\n", conc);
+	// printf("%s\n", conc);
+	if ((strlen(conc) == strlen(str) + strlen(join)))
+	printok("strjoin");
 }
-
+void	_strtrim()
+{
+	char s1[] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+	char s2[] = "Lorem ipsum dolor sit amet, ";
+	char *t = ft_strtrim(s1, s2);
+	printf("%s\n", t);
+}
 
 int	main ()
 {
@@ -321,7 +329,7 @@ int	main ()
 	// _bzero();
 	// _memset();
 	// _memcpy();
-	_memmove();
+	// _memmove();
 	// _strlcpy();
 	// _strlcat();
 	// m_toupper();
@@ -339,7 +347,7 @@ int	main ()
 	// OTHER FUNCTIONS
 	// _substr();
 	// _strjoin();
-	// _strtrim();
+	_strtrim();
 	// _split();
 	// _itoa();
 	// _strmapi();

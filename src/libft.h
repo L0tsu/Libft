@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:53:51 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/21 15:41:45 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:26:17 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *src);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(const char *s1, const char *s2);
+size_t			ft_trimlen(const char *s1, const char *set);
+char			*ft_strtrim(char const *s1, char const *set);
 
 #endif
