@@ -7,7 +7,27 @@ SRCS = 	ft_bzero.c   ft_isdigit.c ft_memset.c  ft_strlen.c  libft.h\
 
 HEADER = libft.h
 
-NAME = libft
+NAME = libft.a
+
+OBJS = $(SRCS:.c=.o)
+
+
+all:		$(NAME)
+
+$(NAME):	$(OBJS)
+			ar -rcs $(NAME) $(OBJS)
+
+clean:
+			rm -f $(OBJS) a.out
+
+fclean:		clean
+			rm -f $(NAME)
+
+re:			fclean $(NAME)
+
+test:	
+		gcc $(CFLAGS) -o a.out libft_main_test.c $(OBJS)
+		@./a.out
 
 git :
 	@git add *.c *.h src makefile

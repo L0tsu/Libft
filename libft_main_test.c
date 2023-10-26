@@ -315,7 +315,19 @@ void	_strtrim()
 	char *t = ft_strtrim(s1, s2);
 	printf("%s\n", t);
 }
-
+void	_split()
+{
+	int i = 0;
+	// char s[] = "Lorem ipsum dolor sit amet,,,,,,,,,,,,, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+	// char s[] = ",,,,,";
+	char s[] = "ssssssswahooskjhskjhskjhskjhs";
+	char **tab = ft_split(s, 's');
+	if (tab)
+	while (tab[i])
+		printf("%s\n", tab[i++]);
+	if (!tab)
+		printf(""RED""BOLD"things fucked up in split..\n");
+}
 int	main ()
 {
 	system("clear");
@@ -347,8 +359,8 @@ int	main ()
 	// OTHER FUNCTIONS
 	// _substr();
 	// _strjoin();
-	_strtrim();
-	// _split();
+	// _strtrim();
+	_split();
 	// _itoa();
 	// _strmapi();
 	// _striteri();

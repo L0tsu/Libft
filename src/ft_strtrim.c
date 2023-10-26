@@ -6,11 +6,22 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 11:47:53 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/26 12:26:57 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/26 14:17:10 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+size_t	ft_trimlen(const char *s1, const char *set)
+{
+	while (*set)
+	{
+		if (*s1 == *set)
+			return (1);
+		set++;
+	}
+	return (0);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
