@@ -2,7 +2,7 @@
 #include <libc.h>
 #include <ctype.h>
 #include <strings.h>
-#include "src/libft.h"
+#include "libft.h"
 #include "colours.h"
 
 void	printok(char *str)
@@ -201,12 +201,12 @@ void	_strchr()
 }
 void	_strrchr()
 {
-	char str[] = "bonjour";
-	if (strrchr(str, 'n') == ft_strrchr(str, 'n'))
-		printok("strrchr");
+	char str[] = "teste";
+	if (strrchr(str, 't' + 256) == ft_strrchr(str, 't' + 256))
+		{printok("strrchr");}
 	else {
 		printKO("strrchr");
-		printf("%s - %s\n",strrchr(str, 'n'), ft_strrchr(str, 'n'));}
+		printf("%s - %s\n",strrchr(str, 'n'), ft_strrchr(str, 'n'));printf("%p - %p\n", strrchr(str, 't' + 256), ft_strrchr(str, 't' + 256));}
 }
 void	_strncmp()
 {
@@ -323,8 +323,12 @@ void	_split()
 	char s[] = "ssssssswahooskjhskjhskjhskjhs";
 	char **tab = ft_split(s, 's');
 	if (tab)
-	while (tab[i])
-		printf("%s\n", tab[i++]);
+	{
+		printf(""CYAN"------ft-split------"WHITE"\n");
+		while (tab[i]){
+			printf("%d |%s|\n", i, tab[i]);i++;}
+		printf(""CYAN"--------------------"WHITE"\n");
+	}
 	if (!tab)
 		printf(""RED""BOLD"things fucked up in split..\n");
 }
@@ -347,7 +351,7 @@ int	main ()
 	// m_toupper();
 	// m_tolower();
 	// _strchr();
-	// _strrchr();
+	_strrchr();
 	// _strncmp();
 	// _memchr();
 	// _memcmp();
@@ -360,7 +364,7 @@ int	main ()
 	// _substr();
 	// _strjoin();
 	// _strtrim();
-	_split();
+	// _split();
 	// _itoa();
 	// _strmapi();
 	// _striteri();

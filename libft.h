@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:53:51 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/26 16:03:53 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:04:41 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
-const char		*ft_memchr(const void *s, int c, size_t n);
+char			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 // string functions
 unsigned int	ft_strlen(const char *s);

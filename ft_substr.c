@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 13:19:16 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/28 17:24:59 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:00:49 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (sub);
 	p = s;
 	if (!(start >= ft_strlen(s)))
+	{
 		while (p[start] && i < len)
 		{
 			sub[i] = p[start];
 			start++;
 			i++;
 		}
+	}
 	sub[i] = '\0';
 	return (sub);
 }

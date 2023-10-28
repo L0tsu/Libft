@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:51:01 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/28 17:03:53 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:36:44 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,18 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	int	i;
-
-	if (!*str)
-		return (NULL);
-	i = ft_strlen(str) - 1;
-	if (!c)
-		return ((char *)&str[i + 1]);
-	while (str[i] != c && i)
-		i--;
-	if (str[i] == c)
+	
+	if (!str)
+		return (0);
+	i = ft_strlen(str);
+	if ((char)c == '\0')
 		return ((char *)&str[i]);
-	return (NULL);
+	i--;
+	while (i >= 0)
+	{
+		if (str[i] == (char)c)
+			return ((char *)&str[i]);
+		i--;
+	}
+	return (0);
 }
