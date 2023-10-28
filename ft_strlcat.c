@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:29:25 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/26 15:33:16 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/28 17:16:30 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstlen)
 	size_t	og;
 
 	j = 0;
+	if (!dst)
+		return (ft_strlen(src) + dstlen);
 	i = ft_strlen(dst);
 	og = i;
 	while (src[j] && (i < dstlen - 1) && dstlen)

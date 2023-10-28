@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:26:26 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/26 15:16:48 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/28 17:20:38 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *src)
 	char	*dup;
 
 	i = 0;
-	if (!*src)
+	if (!src)
 		return (0);
 	dup = (char *)malloc(sizeof(char) * ft_strlen(src) + 1);
 	if (!dup)
