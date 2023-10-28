@@ -6,76 +6,55 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:31:25 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/26 17:15:09 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/28 16:31:03 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_onlyccheck(const char *s, char c)
-{
-	while (*s == c)
-		s++;
-	if (!s)
-		return (0);
-	return (1);
-}
-
-size_t	ft_splitcount(const char *s, char c)
+static size_t	ft_splitcount(const char *s, char c)
 {
 	size_t	i;
 
 	i = 0;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s != c)
 		{
 			i++;
-			while (*s == c)
+			while (*s != c && *s)
 				s++;
 		}
-		s++;
+		else
+			s++;
 	}
 	return (i);
-}
-
-static size_t	ft_splitlen(const char *s, char c)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			return (i + 1);
-		i++;
-	}
-	return (i + 1);
 }
 
 char	**ft_split(const char *s, char c)
 {
 	char	**tab;
-	int		v;
-	int		h;
-	int		i;
+	size_t	len;
+	size_t	v;
 
-	v = ft_splitcount(s, c);
-	tab = (char **)malloc(sizeof(char *) * v);
+	if (!s)
+		return (0);
+	tab = malloc(sizeof(char *) * (ft_splitcount(s, c) + 1));
 	if (!tab)
 		return (NULL);
-	if (ft_onlyccheck(s, c) == 0)
-		return (tab);
-	i = 0;
-	h = 0;
-	while (--v > 0)
+	v = 0;
+	while (*s)
 	{
-		if (h)
-			i += ft_splitlen(&s[i], c);
-		while (s[i] == c)
-			i++;
-		tab[h] = ft_substr(s, i, ft_splitlen(&s[i], c) + 1);
-		h++;
+		if (*s != c)
+		{
+			len = 0;
+			while (*s != c && *s && ++len)
+				s++;
+			tab[v++] = ft_substr(s - len, 0, len);
+		}
+		else
+			s++;
 	}
+	tab[v] = 0;
 	return (tab);
 }
