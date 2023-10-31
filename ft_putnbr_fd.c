@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:17:20 by lotus             #+#    #+#             */
-/*   Updated: 2023/10/31 12:42:12 by julmorea         ###   ########.fr       */
+/*   Created: 2023/10/31 12:16:13 by julmorea          #+#    #+#             */
+/*   Updated: 2023/10/31 12:30:56 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+static void	rec(long long int nb, int fd)
 {
-	const char	*s;
-	char		*d;
+	if (nb == 0)
+		return ;
+	rec(nb / 10, fd);
+	nb = nb % 10 + 48;
+	write (fd, &nb, 1);
+}
 
-	s = src;
-	d = dst;
-	while (n && s)
+void	ft_putnbr_fd(int n, int fd)
+{
+	long long int	nb;
+
+	nb = n;
+	if (n < 0)
 	{
-		*d = *s;
-		s++;
-		d++;
-		n--;
+		write(fd, "-", 1);
+		nb = -nb;
 	}
-	return (dst);
+	if (nb > 0)
+		rec(nb, fd);
+	else if (nb == 0)
+		write(fd, "0", 1);
 }

@@ -6,13 +6,13 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 00:13:29 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/31 10:47:45 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/31 11:41:12 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_recitoa(char *re, int n, int i)
+static int	ft_recitoa(char *re, long long int n, int i)
 {
 	if (n)
 	{
@@ -22,12 +22,12 @@ static int	ft_recitoa(char *re, int n, int i)
 	return (0);
 }
 
-static int	ft_mallen(int n)
+static int	ft_mallen(long long int n)
 {
 	int	i;
 
 	i = 0;
-	if (n < 0)
+	if (n <= 0)
 	{
 		i++;
 		n = -n;
@@ -42,26 +42,23 @@ static int	ft_mallen(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*re;
-	int		i;
+	char			*re;
+	size_t			i;
+	long long int	nb;
 
-	re = malloc(sizeof(char) * (ft_mallen(n) + 1));
+	nb = n;
+	re = malloc(sizeof(char) * (ft_mallen(nb)));
 	if (!re)
 		return (NULL);
-	if (n == -2147483648)
-	{
-		re = "-2147483648";
-		return (re);
-	}
-	i = ft_mallen(n) - 1;
+	i = ft_mallen(nb) - 1;
 	re[i--] = '\0';
-	if (n < 0)
+	if (nb < 0)
 	{
 		re[0] = '-';
-		n = -n;
+		nb = -nb;
 	}
-	else if (n == 0)
+	else if (nb == 0)
 		re[0] = '0';
-	ft_recitoa(re, n, i);
+	ft_recitoa(re, nb, i);
 	return (re);
 }

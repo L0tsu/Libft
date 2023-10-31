@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 11:05:42 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/28 17:19:13 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:03:49 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,17 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (!*needle || !len)
+	if (!*needle)
 		return ((char *)haystack);
-	while (haystack[i] && i < len - 1 && len)
+	while (haystack[i] && i < len)
 	{
 		if (haystack[i] == needle[0])
 		{
 			if (needlefinder(&haystack[i], &needle[0]) == 0 && i
 				+ ft_strlen(needle) <= len)
 				return ((char *)&haystack[i]);
-			i++;
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
