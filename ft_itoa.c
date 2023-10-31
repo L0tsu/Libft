@@ -3,19 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 00:13:29 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/29 00:13:29 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/31 10:47:45 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static size_t	ft_mallen(int n)
+static int	ft_recitoa(char *re, int n, int i)
 {
-	size_t	i;
+	if (n)
+	{
+		re[i] = (n % 10) + 48;
+		return (ft_recitoa(re, (n / 10), i - 1));
+	}
+	return (0);
+}
+
+static int	ft_mallen(int n)
+{
+	int	i;
 
 	i = 0;
 	if (n < 0)
@@ -23,9 +32,9 @@ static size_t	ft_mallen(int n)
 		i++;
 		n = -n;
 	}
-	while (n >= 10)
+	while (n > 0)
 	{
-		n = n/10;
+		n = n / 10;
 		i++;
 	}
 	return (i + 1);
@@ -33,26 +42,26 @@ static size_t	ft_mallen(int n)
 
 char	*ft_itoa(int n)
 {
-	char *re;
-	size_t i;
+	char	*re;
+	int		i;
 
 	re = malloc(sizeof(char) * (ft_mallen(n) + 1));
 	if (!re)
-		return(NULL);
-	ft_bzero(re, ft_mallen(n) + 1);
-	i = 0;
+		return (NULL);
+	if (n == -2147483648)
+	{
+		re = "-2147483648";
+		return (re);
+	}
+	i = ft_mallen(n) - 1;
+	re[i--] = '\0';
 	if (n < 0)
 	{
 		re[0] = '-';
-		if (n == INT_MIN)
-			n += 1;
 		n = -n;
 	}
-	return(re);
-}
-
-int main()
-{
-	char *p = ft_itoa(-100000000);
-	printf("%s\n", p);
+	else if (n == 0)
+		re[0] = '0';
+	ft_recitoa(re, n, i);
+	return (re);
 }

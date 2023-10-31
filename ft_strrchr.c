@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:51:01 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/28 18:36:44 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/31 10:49:54 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	int	i;
-	
+
 	if (!str)
 		return (0);
 	i = ft_strlen(str);

@@ -332,6 +332,12 @@ void	_split()
 	if (!tab)
 		printf(""RED""BOLD"things fucked up in split..\n");
 }
+void	_itoa()
+{
+	char *p = ft_itoa(-9876);
+	if (p)
+		{printok("itoa");printf("%s\n", p);}
+}
 int	main ()
 {
 	system("clear");
@@ -351,7 +357,7 @@ int	main ()
 	// m_toupper();
 	// m_tolower();
 	// _strchr();
-	_strrchr();
+	// _strrchr();
 	// _strncmp();
 	// _memchr();
 	// _memcmp();
@@ -365,7 +371,7 @@ int	main ()
 	// _strjoin();
 	// _strtrim();
 	// _split();
-	// _itoa();
+	_itoa();
 	// _strmapi();
 	// _striteri();
 	// _putchar_fd();
