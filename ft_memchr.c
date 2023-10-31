@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:43:53 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/28 18:05:21 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:08:06 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (n--)
 	{
-		if (p[i] == c)
+		if (p[i] == (char)c)
 			return (&p[i]);
 		i++;
 	}
