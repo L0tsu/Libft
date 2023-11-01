@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 11:30:49 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/26 16:58:37 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/11/01 14:40:01 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	ft_atoi(const char *str)
 
 	i = 0;
 	negative = 1;
+	if (!str)
+		return (0);
 	p = ft_isspace(str);
 	if (str[p] == '-')
 	{
@@ -40,8 +42,7 @@ int	ft_atoi(const char *str)
 		p++;
 	while (str[p] >= '0' && str[p] <= '9')
 	{
-		i += (str[p] - 48);
-		p++;
+		i += (str[p++] - 48);
 		if (str[p] >= '0' && str[p] <= '9')
 			i *= 10;
 	}

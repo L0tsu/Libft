@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:30:51 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/21 13:28:30 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/11/01 14:19:45 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	size_t			i;
 
 	i = 0;
+	if (!b)
+		return (NULL);
 	p = b;
 	while (i < len)
 	{

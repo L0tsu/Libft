@@ -6,7 +6,7 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 11:39:06 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/26 14:54:25 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/11/01 14:22:06 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+	if (!s)
+		return ;
 	ft_memset(s, 0, n);
 }
