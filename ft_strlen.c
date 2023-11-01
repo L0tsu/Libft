@@ -6,11 +6,13 @@
 /*   By: julmorea <julmorea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:05:37 by julmorea          #+#    #+#             */
-/*   Updated: 2023/10/21 13:28:35 by julmorea         ###   ########.fr       */
+/*   Updated: 2023/11/01 12:37:33 by julmorea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
 	unsigned int	i;
 

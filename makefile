@@ -29,9 +29,8 @@ fclean:		clean
 
 re:			fclean $(NAME)
 
-test:	
-		@gcc $(CFLAGS) -o a.out libft_main_test.c $(OBJS)
-		@./a.out
+
+#other functions
 
 git :
 	@git add *.c *.h makefile
